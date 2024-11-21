@@ -18,6 +18,13 @@ To install to a different location:
 make install PREFIX=/your/custom/path
 ```
 
+Installation can also be done using `homebrew` with the following commands:
+
+```bash
+brew tap sodium-hydroxide/compression-tools https://github.com/sodium-hydroxide/compression-tools
+brew install sodium-hydroxide/compression-tools/compression-tools 
+```
+
 ## Usage
 
 Both tools support the --help flag for usage information:
