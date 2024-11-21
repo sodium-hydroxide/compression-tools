@@ -1,0 +1,12 @@
+#!/bin/bash
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "${SCRIPT_DIR}/../src/compression_utils.sh"
+
+# Process command line arguments
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+    show_decompress_usage
+    exit 0
+fi
+
+decompress_directory_contents
+exit $?
