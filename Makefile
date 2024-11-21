@@ -30,7 +30,8 @@ release: check-version
 	@if git diff-index --quiet HEAD --; then \
 		VERSION_TAG="v$(VERSION)"; \
 		echo "$(VERSION)" > VERSION.txt; \
-		git add VERSION.txt; \
+		sed -i '' "s|/tags/v.*\.tar\.gz|/tags/$$VERSION_TAG.tar.gz|" Formula/compression-tools.rb; \
+		git add VERSION.txt Formula/compression-tools.rb; \
 		git commit -m "Bump version to $(VERSION)"; \
 		git tag -a $$VERSION_TAG -m "Release $$VERSION_TAG"; \
 		git push origin main; \
